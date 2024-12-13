@@ -1,0 +1,31 @@
+<!-- urgencias/templates/urgencias/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hospital Urgencias{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al Sistema de Urgencias</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'pagina_principal' %}">Inicio</a></li>
+                <li><a href="{% url 'ingresar_paciente' %}">Cargar Paciente</a></li>
+                <li><a href="{% url 'buscar_paciente' %}">Buscar Paciente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- El contenido específico de cada página se insertará aquí -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Desarrollado por Federico Ruiz Diaz</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!-- urgencias/templates/urgencias/ingresar_paciente.html -->
+{% extends 'urgencias/base.html' %}
+
+{% block title %}Cargar Paciente{% endblock %}
+
+{% block content %}
+    <h2>Cargar nuevo paciente</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Paciente</button>
+    </form>
+{% endblock %}

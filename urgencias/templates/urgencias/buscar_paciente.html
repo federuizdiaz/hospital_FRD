@@ -1,0 +1,21 @@
+<!-- urgencias/templates/urgencias/buscar_paciente.html -->
+{% extends 'urgencias/base.html' %}
+
+{% block title %}Buscar Paciente{% endblock %}
+
+{% block content %}
+    <h2>Buscar paciente</h2>
+    <form method="GET">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+    
+    {% if pacientes %}
+        <ul>
+            {% for paciente in pacientes %}
+                <li>{{ paciente.nombre }} - {{ paciente.dni }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
